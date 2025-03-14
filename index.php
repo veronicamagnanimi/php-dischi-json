@@ -17,7 +17,8 @@ $dischi = getDischi();
         <h1>Dischi</h1>
     </header>
     <div class="container-sm my-5">
-        <div class="row justify-content-center g-4" style="display: flex; flex-wrap: wrap;">
+        <div class="row justify-content-center g-4 bg-body-tertiary rounded-3 py-3"
+            style="display: flex; flex-wrap: wrap;">
             <?php foreach ($dischi as $curItem) { ?>
                 <div class="col-auto">
                     <div class="card h-100" style="width: 200px;">
@@ -35,11 +36,42 @@ $dischi = getDischi();
                         </div>
                     </div>
                 </div>
-
-
-
             <?php } ?>
         </div>
+
+        <!-- form -->
+        <div class="text-center my-3">
+            <h2>Aggiungi un disco</h2>
+        </div>
+        <form action="server.php" method="POST" class="d-flex flex-column w-50 mx-auto justify-content-center align-items-center">
+    <div class="row mb-3 text-center">
+        <div class="col">
+            <label for="cover" class="form-label">Cover URL</label>
+            <input type="text" class="form-control" id="cover" name="cover" required>
+        </div>
+        <div class="col">
+            <label for="titolo" class="form-label">Titolo</label>
+            <input type="text" class="form-control" id="titolo" name="titolo" required>
+        </div>
+        <div class="col">
+            <label for="artista" class="form-label">Artista</label>
+            <input type="text" class="form-control" id="artista" name="artista" required>
+        </div>
+    </div>
+    <div class="row mb-3 text-center">
+        <div class="col">
+            <label for="genere" class="form-label">Genere</label>
+            <input type="text" class="form-control" id="genere" name="genere" required>
+        </div>
+        <div class="col">
+            <label for="anno" class="form-label">Anno</label>
+            <input type="number" class="form-control" id="anno" name="anno" required>
+        </div>
+        <div class="col d-flex align-items-end">
+            <button type="submit" class="btn btn-dark w-50">Aggiungi</button>
+        </div>
+    </div>
+</form>
     </div>
 </body>
 
